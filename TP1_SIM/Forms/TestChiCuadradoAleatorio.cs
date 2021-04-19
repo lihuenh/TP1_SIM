@@ -15,7 +15,7 @@ namespace TP1_SIM
     public partial class TestChiCuadrado : Form
     {
         List<decimal> rndLista = new List<decimal>();
-        
+         //realizando pruebas para git. borrar luego
         public TestChiCuadrado()
         {
             InitializeComponent();
@@ -141,7 +141,6 @@ namespace TP1_SIM
             }
 
         }
-
         private void btn_ValidarHipotesis_Click(object sender, EventArgs e)
         {
             if (gdrAleatorios.Rows.Count == 0)
