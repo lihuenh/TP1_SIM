@@ -294,7 +294,7 @@
             this.gdrAleatorios.AllowUserToAddRows = false;
             this.gdrAleatorios.AllowUserToDeleteRows = false;
             this.gdrAleatorios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gdrAleatorios.Location = new System.Drawing.Point(748, 47);
+            this.gdrAleatorios.Location = new System.Drawing.Point(743, 121);
             this.gdrAleatorios.Name = "gdrAleatorios";
             this.gdrAleatorios.ReadOnly = true;
             this.gdrAleatorios.Size = new System.Drawing.Size(10, 10);

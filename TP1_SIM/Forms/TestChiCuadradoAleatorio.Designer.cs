@@ -40,6 +40,9 @@
             this.btn_ValidarHipotesis = new System.Windows.Forms.Button();
             this.cmb_Significancia = new System.Windows.Forms.ComboBox();
             this.Hipotesis = new System.Windows.Forms.GroupBox();
+            this.txt_ValorTabulado = new System.Windows.Forms.NumericUpDown();
+            this.txt_Libertad = new System.Windows.Forms.NumericUpDown();
+            this.txt_Estadistico = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,17 +51,14 @@
             this.gdrAleatorios = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_cantNum = new System.Windows.Forms.NumericUpDown();
-            this.txt_Estadistico = new System.Windows.Forms.NumericUpDown();
-            this.txt_Libertad = new System.Windows.Forms.NumericUpDown();
-            this.txt_ValorTabulado = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.gdrChiCuadrado)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.Hipotesis.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ValorTabulado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Libertad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Estadistico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrAleatorios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Estadistico)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Libertad)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ValorTabulado)).BeginInit();
             this.SuspendLayout();
             // 
             // gdrChiCuadrado
@@ -221,6 +221,48 @@
             this.Hipotesis.TabStop = false;
             this.Hipotesis.Text = "Hipotesis";
             // 
+            // txt_ValorTabulado
+            // 
+            this.txt_ValorTabulado.DecimalPlaces = 4;
+            this.txt_ValorTabulado.Enabled = false;
+            this.txt_ValorTabulado.Location = new System.Drawing.Point(117, 123);
+            this.txt_ValorTabulado.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txt_ValorTabulado.Name = "txt_ValorTabulado";
+            this.txt_ValorTabulado.Size = new System.Drawing.Size(120, 26);
+            this.txt_ValorTabulado.TabIndex = 14;
+            // 
+            // txt_Libertad
+            // 
+            this.txt_Libertad.DecimalPlaces = 4;
+            this.txt_Libertad.Enabled = false;
+            this.txt_Libertad.Location = new System.Drawing.Point(117, 58);
+            this.txt_Libertad.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txt_Libertad.Name = "txt_Libertad";
+            this.txt_Libertad.Size = new System.Drawing.Size(120, 26);
+            this.txt_Libertad.TabIndex = 14;
+            // 
+            // txt_Estadistico
+            // 
+            this.txt_Estadistico.DecimalPlaces = 4;
+            this.txt_Estadistico.Enabled = false;
+            this.txt_Estadistico.Location = new System.Drawing.Point(117, 29);
+            this.txt_Estadistico.Maximum = new decimal(new int[] {
+            1215752192,
+            23,
+            0,
+            0});
+            this.txt_Estadistico.Name = "txt_Estadistico";
+            this.txt_Estadistico.Size = new System.Drawing.Size(120, 26);
+            this.txt_Estadistico.TabIndex = 14;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -264,10 +306,10 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(21, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(135, 17);
+            this.label6.Size = new System.Drawing.Size(158, 18);
             this.label6.TabIndex = 11;
             this.label6.Text = "Numeros a generar:";
             // 
@@ -294,58 +336,16 @@
             // 
             // txt_cantNum
             // 
-            this.txt_cantNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cantNum.Location = new System.Drawing.Point(162, 44);
+            this.txt_cantNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cantNum.Location = new System.Drawing.Point(184, 42);
             this.txt_cantNum.Maximum = new decimal(new int[] {
             1316134912,
             2328,
             0,
             0});
             this.txt_cantNum.Name = "txt_cantNum";
-            this.txt_cantNum.Size = new System.Drawing.Size(405, 24);
+            this.txt_cantNum.Size = new System.Drawing.Size(383, 24);
             this.txt_cantNum.TabIndex = 12;
-            // 
-            // txt_Estadistico
-            // 
-            this.txt_Estadistico.DecimalPlaces = 4;
-            this.txt_Estadistico.Enabled = false;
-            this.txt_Estadistico.Location = new System.Drawing.Point(117, 29);
-            this.txt_Estadistico.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
-            0,
-            0});
-            this.txt_Estadistico.Name = "txt_Estadistico";
-            this.txt_Estadistico.Size = new System.Drawing.Size(120, 26);
-            this.txt_Estadistico.TabIndex = 14;
-            // 
-            // txt_Libertad
-            // 
-            this.txt_Libertad.DecimalPlaces = 4;
-            this.txt_Libertad.Enabled = false;
-            this.txt_Libertad.Location = new System.Drawing.Point(117, 58);
-            this.txt_Libertad.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
-            0,
-            0});
-            this.txt_Libertad.Name = "txt_Libertad";
-            this.txt_Libertad.Size = new System.Drawing.Size(120, 26);
-            this.txt_Libertad.TabIndex = 14;
-            // 
-            // txt_ValorTabulado
-            // 
-            this.txt_ValorTabulado.DecimalPlaces = 4;
-            this.txt_ValorTabulado.Enabled = false;
-            this.txt_ValorTabulado.Location = new System.Drawing.Point(117, 123);
-            this.txt_ValorTabulado.Maximum = new decimal(new int[] {
-            1215752192,
-            23,
-            0,
-            0});
-            this.txt_ValorTabulado.Name = "txt_ValorTabulado";
-            this.txt_ValorTabulado.Size = new System.Drawing.Size(120, 26);
-            this.txt_ValorTabulado.TabIndex = 14;
             // 
             // TestChiCuadrado
             // 
@@ -369,11 +369,11 @@
             this.groupBox1.PerformLayout();
             this.Hipotesis.ResumeLayout(false);
             this.Hipotesis.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_ValorTabulado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Libertad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txt_Estadistico)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrAleatorios)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_cantNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Estadistico)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Libertad)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ValorTabulado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

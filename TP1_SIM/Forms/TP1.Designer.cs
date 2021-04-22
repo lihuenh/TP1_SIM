@@ -29,6 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtMuestra = new System.Windows.Forms.NumericUpDown();
+            this.txtCteG = new System.Windows.Forms.NumericUpDown();
+            this.txtCteK = new System.Windows.Forms.NumericUpDown();
+            this.txtCteM = new System.Windows.Forms.NumericUpDown();
+            this.txtCteC = new System.Windows.Forms.NumericUpDown();
+            this.txtCteA = new System.Windows.Forms.NumericUpDown();
+            this.txtSemilla = new System.Windows.Forms.NumericUpDown();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -48,26 +55,19 @@
             this.btn_chiCuadradoCongruencial = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtSemilla = new System.Windows.Forms.NumericUpDown();
-            this.txtCteA = new System.Windows.Forms.NumericUpDown();
-            this.txtCteC = new System.Windows.Forms.NumericUpDown();
-            this.txtCteM = new System.Windows.Forms.NumericUpDown();
-            this.txtCteK = new System.Windows.Forms.NumericUpDown();
-            this.txtCteG = new System.Windows.Forms.NumericUpDown();
-            this.txtMuestra = new System.Windows.Forms.NumericUpDown();
             this.txtPromedio = new System.Windows.Forms.TextBox();
             this.txtVarianza = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteC)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrMixto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteM)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteK)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteG)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -94,12 +94,98 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Constantes";
             // 
+            // txtMuestra
+            // 
+            this.txtMuestra.Location = new System.Drawing.Point(675, 19);
+            this.txtMuestra.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtMuestra.Name = "txtMuestra";
+            this.txtMuestra.Size = new System.Drawing.Size(79, 26);
+            this.txtMuestra.TabIndex = 1;
+            // 
+            // txtCteG
+            // 
+            this.txtCteG.Location = new System.Drawing.Point(507, 47);
+            this.txtCteG.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtCteG.Name = "txtCteG";
+            this.txtCteG.Size = new System.Drawing.Size(79, 26);
+            this.txtCteG.TabIndex = 1;
+            this.txtCteG.ValueChanged += new System.EventHandler(this.txtCteG_ValueChanged);
+            // 
+            // txtCteK
+            // 
+            this.txtCteK.Location = new System.Drawing.Point(507, 16);
+            this.txtCteK.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtCteK.Name = "txtCteK";
+            this.txtCteK.Size = new System.Drawing.Size(79, 26);
+            this.txtCteK.TabIndex = 1;
+            this.txtCteK.ValueChanged += new System.EventHandler(this.txtCteK_ValueChanged);
+            // 
+            // txtCteM
+            // 
+            this.txtCteM.Location = new System.Drawing.Point(353, 45);
+            this.txtCteM.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtCteM.Name = "txtCteM";
+            this.txtCteM.Size = new System.Drawing.Size(108, 26);
+            this.txtCteM.TabIndex = 1;
+            // 
+            // txtCteC
+            // 
+            this.txtCteC.Location = new System.Drawing.Point(353, 16);
+            this.txtCteC.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtCteC.Name = "txtCteC";
+            this.txtCteC.Size = new System.Drawing.Size(108, 26);
+            this.txtCteC.TabIndex = 1;
+            // 
+            // txtCteA
+            // 
+            this.txtCteA.Location = new System.Drawing.Point(127, 47);
+            this.txtCteA.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtCteA.Name = "txtCteA";
+            this.txtCteA.Size = new System.Drawing.Size(108, 26);
+            this.txtCteA.TabIndex = 1;
+            // 
+            // txtSemilla
+            // 
+            this.txtSemilla.Location = new System.Drawing.Point(127, 18);
+            this.txtSemilla.Maximum = new decimal(new int[] {
+            -1530494976,
+            232830,
+            0,
+            0});
+            this.txtSemilla.Name = "txtSemilla";
+            this.txtSemilla.Size = new System.Drawing.Size(108, 26);
+            this.txtSemilla.TabIndex = 1;
+            // 
             // btnGenerar
             // 
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.Location = new System.Drawing.Point(594, 46);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(158, 22);
+            this.btnGenerar.Size = new System.Drawing.Size(158, 27);
             this.btnGenerar.TabIndex = 3;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = true;
@@ -209,6 +295,7 @@
             this.rdMultiplicativo.TabIndex = 0;
             this.rdMultiplicativo.Text = "Congruente multiplicativo";
             this.rdMultiplicativo.UseVisualStyleBackColor = true;
+            this.rdMultiplicativo.CheckedChanged += new System.EventHandler(this.rdMultiplicativo_CheckedChanged);
             // 
             // rdMixto
             // 
@@ -222,6 +309,7 @@
             this.rdMixto.TabStop = true;
             this.rdMixto.Text = "Congruente mixto";
             this.rdMixto.UseVisualStyleBackColor = true;
+            this.rdMixto.CheckedChanged += new System.EventHandler(this.rdMixto_CheckedChanged);
             // 
             // btnUnoMas
             // 
@@ -299,90 +387,6 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Números aleatorios:";
             // 
-            // txtSemilla
-            // 
-            this.txtSemilla.Location = new System.Drawing.Point(127, 18);
-            this.txtSemilla.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtSemilla.Name = "txtSemilla";
-            this.txtSemilla.Size = new System.Drawing.Size(108, 26);
-            this.txtSemilla.TabIndex = 1;
-            // 
-            // txtCteA
-            // 
-            this.txtCteA.Location = new System.Drawing.Point(127, 47);
-            this.txtCteA.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtCteA.Name = "txtCteA";
-            this.txtCteA.Size = new System.Drawing.Size(108, 26);
-            this.txtCteA.TabIndex = 1;
-            // 
-            // txtCteC
-            // 
-            this.txtCteC.Location = new System.Drawing.Point(353, 16);
-            this.txtCteC.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtCteC.Name = "txtCteC";
-            this.txtCteC.Size = new System.Drawing.Size(108, 26);
-            this.txtCteC.TabIndex = 1;
-            // 
-            // txtCteM
-            // 
-            this.txtCteM.Location = new System.Drawing.Point(353, 44);
-            this.txtCteM.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtCteM.Name = "txtCteM";
-            this.txtCteM.Size = new System.Drawing.Size(108, 26);
-            this.txtCteM.TabIndex = 1;
-            // 
-            // txtCteK
-            // 
-            this.txtCteK.Location = new System.Drawing.Point(507, 16);
-            this.txtCteK.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtCteK.Name = "txtCteK";
-            this.txtCteK.Size = new System.Drawing.Size(79, 26);
-            this.txtCteK.TabIndex = 1;
-            // 
-            // txtCteG
-            // 
-            this.txtCteG.Location = new System.Drawing.Point(507, 45);
-            this.txtCteG.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtCteG.Name = "txtCteG";
-            this.txtCteG.Size = new System.Drawing.Size(79, 26);
-            this.txtCteG.TabIndex = 1;
-            // 
-            // txtMuestra
-            // 
-            this.txtMuestra.Location = new System.Drawing.Point(675, 19);
-            this.txtMuestra.Maximum = new decimal(new int[] {
-            -1530494976,
-            232830,
-            0,
-            0});
-            this.txtMuestra.Name = "txtMuestra";
-            this.txtMuestra.Size = new System.Drawing.Size(79, 26);
-            this.txtMuestra.TabIndex = 1;
-            // 
             // txtPromedio
             // 
             this.txtPromedio.Enabled = false;
@@ -417,17 +421,17 @@
             this.Text = "TP1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteC)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCteA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdrMixto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtSemilla)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteM)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteK)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCteG)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMuestra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

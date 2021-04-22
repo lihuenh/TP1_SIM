@@ -12,9 +12,7 @@ namespace TP1_SIM
 {
     public partial class TP1 : Form
     {
-        DataTable table = new DataTable();
-        
-       
+        DataTable table = new DataTable();       
         public TP1()
         {
             InitializeComponent();
@@ -29,29 +27,14 @@ namespace TP1_SIM
             table.Columns.Add("Acumulador media");
         }
 
-        private void txtCteG_TextChanged(object sender, EventArgs e)
-        {
-
-            //txtCteM.Text = (int.Parse(txtCteG.Text) ^ 2).ToString();
-     
-        }
-
         private double CongruenteMixto(decimal semilla, decimal a, decimal c, decimal m, int n)
         {
-
             table.Rows.Clear();
-            //if (gdrMixto.Columns.Count > 4)
-            //{
-            //    table.Columns.Add("Acumulador media");
-            //}
-            
             decimal sem, prom, random, preAc, ac;
-
-
-
             sem = (a * semilla + c) % (m);
             random = Math.Truncate((sem / (m)) * 10000) / 10000;
-            table.Rows.Add(1, sem, random, random);
+            table.Rows.Add(1, sem, random, random); 
+
             for (int i = 1; i < n; i++)
             {
                 sem = ((a * decimal.Parse(table.Rows[i - 1]["X"].ToString())) + c) % (m);
@@ -60,11 +43,8 @@ namespace TP1_SIM
                 // Programacion del acumulador promedio
                 preAc = decimal.Parse(table.Rows[i-1]["Acumulador media"].ToString()) + random;
 
-
                 // Programacion del acumulador varianza
                 table.Rows.Add(i + 1, sem, random, preAc);
-
-
             }
 
             gdrMixto.DataSource = table;
@@ -72,7 +52,6 @@ namespace TP1_SIM
 
             return (double)(prom = ac / table.Rows.Count);
         }
-
         private double CongruenteMultiplicativo(decimal semilla, decimal a, decimal m, int n)
         {
 
@@ -95,12 +74,10 @@ namespace TP1_SIM
 
 
             }
-
             gdrMixto.DataSource = table;
             ac = decimal.Parse(table.Rows[n - 1]["Acumulador media"].ToString());
 
             return (double)(prom = ac / table.Rows.Count);
-
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -111,6 +88,7 @@ namespace TP1_SIM
                 MessageBox.Show("ERROR!, los valores ingresados deben ser mayores a 0.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
+                
             {
                 decimal a = txtCteA.Value; //Cte multiplicativa
                 decimal c = txtCteC.Value; //Cte aditiva
@@ -202,21 +180,6 @@ namespace TP1_SIM
             }
 
         }
-
-        private double calcularPromedio(DataTable tabla)
-        {
-            double prom = 0;
-            double ac = double.Parse(tabla.Rows[0]["Num Aleatorio"].ToString());
-            int n = tabla.Rows.Count;
-            for (int i = 1; i < tabla.Rows.Count; i++)
-            {
-                ac = ac + double.Parse(tabla.Rows[i]["Num Aleatorio"].ToString());
-            }
-
-            prom = Math.Truncate((ac / n) * 10000) / 10000;
-            return prom;
-        }
-
         private double calcularVarianza(decimal prom)
         {
             decimal varianza;
@@ -252,6 +215,35 @@ namespace TP1_SIM
                 }
             }
 
+        }
+
+        private void txtCteK_ValueChanged(object sender, EventArgs e)
+        {
+            if (rdMixto.Checked==true)
+            {
+                txtCteA.Value = 1 + (4 * txtCteK.Value);
+            }
+            else
+            {
+                txtCteA.Value = 3 + (8 * txtCteK.Value);
+            }
+        }
+
+        private void txtCteG_ValueChanged(object sender, EventArgs e)
+        {
+
+            txtCteM.Value = (int)Math.Pow(2, (double)txtCteG.Value);
+        }
+
+        private void rdMultiplicativo_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCteC.Value = 0;
+            txtCteC.Enabled = false;
+        }
+
+        private void rdMixto_CheckedChanged(object sender, EventArgs e)
+        {
+            txtCteC.Enabled = true;
         }
     }
 }

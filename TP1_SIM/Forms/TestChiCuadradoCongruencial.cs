@@ -52,7 +52,6 @@ namespace TP1_SIM.Forms
                 calChiCuadrado(cantIntervalos, tamIntervalo);
             }
         }
-
         private void calChiCuadrado(int cantIntervalo, double tamaño)
         {
 
@@ -61,7 +60,6 @@ namespace TP1_SIM.Forms
             double desde, hasta, chiCuadrado = 0, ac = 0;
 
             desde = 0;
-
 
             // Nombres de las columnas
             tabla.Columns.Add("Desde");
@@ -102,7 +100,6 @@ namespace TP1_SIM.Forms
             cmb_Significancia.Enabled = true;
 
         }
-
         private void cmb_Significancia_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_Significancia.SelectedIndex != -1)
@@ -113,7 +110,6 @@ namespace TP1_SIM.Forms
             }
 
         }
-
         private void btn_ValidarHipotesis_Click(object sender, EventArgs e)
         {
             if (cmb_Significancia.Enabled==false)
@@ -139,7 +135,6 @@ namespace TP1_SIM.Forms
                 }
             }
         }
-
         private void TestChiCuadradoCongruencial_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
