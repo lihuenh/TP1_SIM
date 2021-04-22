@@ -22,12 +22,12 @@ namespace TP1_SIM
             cmb_Significancia.SelectedIndex = -1;
             cmb_Significancia.Enabled = false;
         }
-
+        //-------------------------------------------------------------LOAD
         private void TestChiCuadrado_Load(object sender, EventArgs e)
         {
             this.reportViewer1.RefreshReport();
         }
-
+        //-------------------------------------------------------------BOTON PARA CALCULAR CHI CUADRADO
         private void btnCalcularChi_Click(object sender, EventArgs e)
         {
             if (txt_cantNum.Value==0)
@@ -72,6 +72,7 @@ namespace TP1_SIM
                 }
             }
         }
+        //-------------------------------------------------------------METODO PARA GENERAR NUMEROS RANDOM
         private void generarRandom(int CantNumeros)
         {
             Random rnd = new Random();
@@ -83,6 +84,7 @@ namespace TP1_SIM
                 gdrAleatorios.Rows.Add((i + 1) + ") \t" + num);
             }
         }
+        //-------------------------------------------------------------METODO PARA CALCULAR CHI CUADRADO
         private void calChiCuadrado(int cantIntervalo, double tamaño)
         {
             DataTable tabla = new DataTable();
@@ -130,7 +132,7 @@ namespace TP1_SIM
             cmb_Significancia.Enabled = true;
 
         }
-
+        //-------------------------------------------------------------ACCION CUANDO SE SELECCIONA EL COMBO DE SIGNIFICANCIA
         private void cmb_Significancia_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmb_Significancia.SelectedIndex != -1 )
@@ -141,7 +143,7 @@ namespace TP1_SIM
             }
 
         }
-
+        //-------------------------------------------------------------BOTON PARA VALIDAR HIPOTESIS
         private void btn_ValidarHipotesis_Click(object sender, EventArgs e)
         {
             if (gdrAleatorios.Rows.Count == 0)

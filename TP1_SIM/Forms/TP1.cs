@@ -26,7 +26,7 @@ namespace TP1_SIM
             table.Columns.Add("Num Aleatorio");
             table.Columns.Add("Acumulador media");
         }
-
+        //-------------------------------------------------------------METODO PARA CALCULAR EL CONGRUENTE MIXTO
         private double CongruenteMixto(decimal semilla, decimal a, decimal c, decimal m, int n)
         {
             table.Rows.Clear();
@@ -52,9 +52,9 @@ namespace TP1_SIM
 
             return (double)(prom = ac / table.Rows.Count);
         }
+        //-------------------------------------------------------------METODO PARA CALCULAR EL MULTIPLICATIVO
         private double CongruenteMultiplicativo(decimal semilla, decimal a, decimal m, int n)
         {
-
             table.Rows.Clear();
             decimal sem, preAc, ac, prom;
             decimal random;
@@ -69,9 +69,7 @@ namespace TP1_SIM
                 // Programacion del acumulador promedio
                 preAc = decimal.Parse(table.Rows[i - 1]["Acumulador media"].ToString()) + random;
 
-
                 table.Rows.Add(i + 1, sem, random, preAc);
-
 
             }
             gdrMixto.DataSource = table;
@@ -79,10 +77,9 @@ namespace TP1_SIM
 
             return (double)(prom = ac / table.Rows.Count);
         }
-
+        //-------------------------------------------------------------BOTON PARA GENERAR NUMEROS PSEUDOALEATORIOS
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-
             decimal a = txtCteA.Value; //Cte multiplicativa
             decimal c = txtCteC.Value; //Cte aditiva
             decimal m = txtCteM.Value; //Modulo
@@ -118,7 +115,7 @@ namespace TP1_SIM
                 }
             }
         }
-
+        //-------------------------------------------------------------METODO PARA UN NUMERO MAS MIXTO
         private double UnoMasMixto( int a, int c, int m)
         {
             int n = gdrMixto.Rows.Count;
@@ -134,6 +131,7 @@ namespace TP1_SIM
 
             return preAc / table.Rows.Count;
         }
+        //-------------------------------------------------------------METODO PARA UN NUMERO MAS MULTIPLICATIVO
         private double UnoMasMultiplicativo(int a, int m)
         {
             int n = gdrMixto.Rows.Count;
@@ -149,6 +147,7 @@ namespace TP1_SIM
 
             return preAc / gdrMixto.Rows.Count;
         }
+        //-------------------------------------------------------------BOTON PARA GENERAR UN NUMERO MAS
         private void btnUnoMas_Click(object sender, EventArgs e)
         {
             if (table.Rows.Count == 0)
@@ -157,7 +156,6 @@ namespace TP1_SIM
             }
             else
             {
-                //boton1mas
                 int a = int.Parse(txtCteA.Text.Trim()); //Cte multiplicativa
                 int c = int.Parse(txtCteC.Text.Trim()); //Cte aditiva
                 int m = int.Parse(txtCteM.Text.Trim()); //Modulo
@@ -175,10 +173,10 @@ namespace TP1_SIM
                     }
                     txtPromedio.Text = (Math.Truncate(10000 * promedio) / 10000).ToString();
                     txtVarianza.Text = calcularVarianza((decimal)promedio).ToString();
-
                 }
             }
         }
+        //-------------------------------------------------------------METODO PARA CALCULAR LA VARIANZA
         private double calcularVarianza(decimal prom)
         {
             decimal varianza;
@@ -189,12 +187,13 @@ namespace TP1_SIM
             }
             return (double)(varianza = Math.Truncate((ac / table.Rows.Count) * 10000) / 10000);
         }
-
+        //-------------------------------------------------------------BOTON PARA CALCULAR EL CHI-CUADRADO DE NUMEROS RANDOM
         private void btnChiCuadrado_Click(object sender, EventArgs e)
         {
             TestChiCuadrado ventana = new TestChiCuadrado();
             ventana.ShowDialog();
         }
+        //-------------------------------------------------------------BOTON PARA CALCULAR EL CHI-CUADRADO DEL METODO CONGRUENCIAL MIXTO
         private void btn_chiCuadradoCongruencial_Click(object sender, EventArgs e)
         {
             if (table.Rows.Count == 0)
@@ -214,6 +213,7 @@ namespace TP1_SIM
                 }
             }
         }
+        //-------------------------------------------------------------ACCION AL SELECCIONAR UN NUMERO CONTANTE K
         private void txtCteK_ValueChanged(object sender, EventArgs e)
         {
             if (rdMixto.Checked==true)
@@ -225,15 +225,18 @@ namespace TP1_SIM
                 txtCteA.Value = 3 + (8 * txtCteK.Value);
             }
         }
+        //-------------------------------------------------------------ACCION AL SELECCIONAR UN NUMERO CONSTANTE G
         private void txtCteG_ValueChanged(object sender, EventArgs e)
         {
             txtCteM.Value = (int)Math.Pow(2, (double)txtCteG.Value);
         }
+        //-------------------------------------------------------------ACCION AL SELECCIONAR EL RADIUS MULTIPLICATIVO
         private void rdMultiplicativo_CheckedChanged(object sender, EventArgs e)
         {
             txtCteC.Value = 0;
             txtCteC.Enabled = false;
         }
+        //-------------------------------------------------------------ACCION AL SELECCIONAR EL RADIUS MIXTO
         private void rdMixto_CheckedChanged(object sender, EventArgs e)
         {
             txtCteC.Enabled = true;
