@@ -83,37 +83,40 @@ namespace TP1_SIM
         private void btnGenerar_Click(object sender, EventArgs e)
         {
 
-            if (txtSemilla.Value<=0 || txtCteA.Value <= 0 || txtCteC.Value <= 0|| txtCteM.Value <= 0 || txtMuestra.Value <= 0)
-            {
-                MessageBox.Show("ERROR!, los valores ingresados deben ser mayores a 0.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-                
-            {
-                decimal a = txtCteA.Value; //Cte multiplicativa
-                decimal c = txtCteC.Value; //Cte aditiva
-                decimal m = txtCteM.Value; //Modulo
-                decimal semilla = txtSemilla.Value; //Raiz o semilla
-                decimal n = txtMuestra.Value; // Es la muestra
+            decimal a = txtCteA.Value; //Cte multiplicativa
+            decimal c = txtCteC.Value; //Cte aditiva
+            decimal m = txtCteM.Value; //Modulo
+            decimal semilla = txtSemilla.Value; //Raiz o semilla
+            decimal n = txtMuestra.Value; // Es la muestra
 
-                decimal promedio;
-
-                //gdrMixto.Rows.RemoveAt(1);           
-                if (rdMixto.Checked == true)
+            decimal promedio;
+          
+            if (rdMixto.Checked == true)
+            {
+                if (txtSemilla.Value <= 0 || txtCteA.Value <= 0 || txtCteC.Value <= 0 || txtCteM.Value <= 0 || txtMuestra.Value <= 0)
+                {
+                    MessageBox.Show("ERROR!, los valores de: 'x', 'a', 'c', 'm' y 'n' deben ser mayores a 0.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
                 {
                     promedio = (decimal)CongruenteMixto(semilla, a, c, m, (int)n);
-                    txtPromedio.Text = promedio.ToString(); //calcularPromedio(table).ToString();
+                    txtPromedio.Text = promedio.ToString(); 
                     txtVarianza.Text = calcularVarianza(promedio).ToString();
-                    //gdrMixto.Columns.RemoveAt(3);
                 }
-                if (rdMultiplicativo.Checked == true)
+            }
+            else
+            {
+                if (txtSemilla.Value <= 0 || txtCteA.Value <= 0 || txtCteM.Value <= 0 || txtMuestra.Value <= 0)
+                {
+                    MessageBox.Show("ERROR!, los valores de: 'x', 'a', 'm' y 'n' deben ser mayores a 0.", "¡ERROR!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
                 {
                     promedio = (decimal)CongruenteMultiplicativo(semilla, a, m, (int)n);
                     txtPromedio.Text = promedio.ToString();
                     txtVarianza.Text = calcularVarianza(promedio).ToString();
-
                 }
-            }   
+            }
         }
 
         private double UnoMasMixto( int a, int c, int m)
@@ -130,9 +133,7 @@ namespace TP1_SIM
             gdrMixto.DataSource = table;
 
             return preAc / table.Rows.Count;
-            
         }
-
         private double UnoMasMultiplicativo(int a, int m)
         {
             int n = gdrMixto.Rows.Count;
@@ -147,7 +148,6 @@ namespace TP1_SIM
             gdrMixto.DataSource = table;
 
             return preAc / gdrMixto.Rows.Count;
-
         }
         private void btnUnoMas_Click(object sender, EventArgs e)
         {
@@ -178,7 +178,6 @@ namespace TP1_SIM
 
                 }
             }
-
         }
         private double calcularVarianza(decimal prom)
         {
@@ -214,9 +213,7 @@ namespace TP1_SIM
                     ventana.ShowDialog();
                 }
             }
-
         }
-
         private void txtCteK_ValueChanged(object sender, EventArgs e)
         {
             if (rdMixto.Checked==true)
@@ -228,19 +225,15 @@ namespace TP1_SIM
                 txtCteA.Value = 3 + (8 * txtCteK.Value);
             }
         }
-
         private void txtCteG_ValueChanged(object sender, EventArgs e)
         {
-
             txtCteM.Value = (int)Math.Pow(2, (double)txtCteG.Value);
         }
-
         private void rdMultiplicativo_CheckedChanged(object sender, EventArgs e)
         {
             txtCteC.Value = 0;
             txtCteC.Enabled = false;
         }
-
         private void rdMixto_CheckedChanged(object sender, EventArgs e)
         {
             txtCteC.Enabled = true;
